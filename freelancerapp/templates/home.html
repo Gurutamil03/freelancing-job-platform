@@ -1,0 +1,236 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Hired Gun-Freelance Job Platform</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'home.css'%}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://kit.fontawesome.com/31149d48b0.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    
+    <nav class="navbar navbar-expand-lg fixed-top navbar-Dark navbarScroll">
+        <div class="container">
+            <a class="navbar-brand" href="#home"><img src="{% static 'logoorg.png'%}" background-type="none" height="70px"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#home"><button class="nav-button" type="menu">Home</button></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about"><button class="nav-button" type="menu">About As</button></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'postjob' %}"><button class="nav-button" type="menu">post A Job</button></a>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <button class="nav-button" type="menu">Freelancer</button>
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="{% url 'intexlogin1'%}"><button class="nav-button" type="menu">Hire A Freelancer</button></a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="{% url 'intexlogin'%}"><button class="nav-button" type="menu">Become A Freelancer </button></a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact"><button class="nav-button" type="menu">Contact Us</button></a>
+                    </li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </nav>
+    
+    <section class="bgimage" id="home" style="background-image:url('{% static 'freelancehome.jpeg' %}');">
+        <div class="container-fluid">
+            <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hero-text">
+                <h2 class="hero_title">HIRED GUN</h2>
+                <p class="hero_desc" id="cl">A freelancer is an independent contractor who earns wages on a per-job or per-task basis, typically for short-term work. Benefits of freelancing include the freedom to work from home or from a non-traditional workspace, a flexible work schedule, and a better work-life balance.</p>
+                <p class="hero-text" id="cl">
+                  
+                    <li>Real success starts here</li>
+                    <li>We are concern about your success</li>
+                    <li>More than just a livelihood</li>
+                    <li>Make every penny count</li>
+                  
+                </p>
+              </div>
+            </div>
+        </div>
+    </section>
+    <section class="about-us" id="about">
+      <div class="container">
+        <h2>About Us</h2>
+        <p>What is a good description for a freelancer?
+          I'm highly motivated and experienced freelancer with a background in web development, software engineering and graphic design. I am passion for creating high quality and user-friendly digital products. I have the ability to work independently and efficiently. While I also delivering projects on-time and within budget.</p>
+            <h1 class="mb-4">We Help To Get The Best Job And Find A Talent</h1>
+            <p class="mb-4">The profile summary is where you can briefly provide important details that make you the best suited freelancer for a job. Guaranteed, employers take the time to read that portion of your profile page.</p>
+            <p><i class="fa fa-check text-primary me-3"></i>Lay Of The Abridge</p>
+            <p><i class="fa fa-check text-primary me-3"></i>There's Only One True Website!</p>
+            <p><i class="fa fa-check text-primary me-3"></i>A Day With Freelance</p>
+            <a class="btn btn-primary py-3 px-5 mt-3" href="">Read More</a>
+        
+      </div>
+    </section>
+    <br>
+    <br>
+    <!-- Team Container -->
+<section class="top-freelancers">
+    <div class="w3-container w3-padding-64 w3-center" id="team">
+    <h2>OUR TOP Freelancers</h2>
+    <p>Meet the Freelancers</p>
+    
+    <div class="w3-row"><br>
+    
+    <div class="w3-quarter">
+      <img src="{% static 'freelancer1.jpeg'%}" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+      <h3>Johnny Walker</h3>
+      <p>Web Designer</p>
+    </div>
+    
+   <div class="w3-quarter">
+      <img src="{% static 'freelancer2.jpeg'%}" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+      <h3>Rebecca Flex</h3>
+      <p>Software Engineer</p>
+    </div>
+    
+    <div class="w3-quarter">
+      <img src="{% static 'freelancer3.jpeg'%}" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+      <h3>Jan Ringo</h3>
+      <p>Data Analyst</p>
+    </div>
+    
+    <div class="w3-quarter">
+      <img src="{% static 'freelancer4.jpeg'%}" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+      <h3>Mia Ringo</h3>
+      <p>ML Engineer</p>
+    </div>
+    
+    </div>
+    </div>
+</section>
+<br>
+    <br>
+    <!-- Work Row -->
+    <section class="top-works">
+    <div class="w3-row-padding w3-padding-64 " id="work">
+    
+    <div class="w3-quarter">
+    <h2>Our Work with Top Companies</h2>
+    <p>Freelance platforms help companies find and hire independent professionals for temporary job roles or special projects. These platforms offer a marketplace for businesses to browse profiles of freelancer candidates based on skills, experience, location, or other criteria.</p>
+    </div>
+    
+    <div class="w3-quarter">
+    <div class="w3-card w3-white">
+      <img src="{% static 'google.png'%}" alt="Snow" style="width:100%">
+      <div class="w3-container">
+      <h4 style="color: darkcyan;">GOOGLE</h4>
+      <h3 style="text-decoration: underline;">WORKS</h3>
+      <p>Design a Website</p>
+      <p>Data Analytics</p>
+      <p>Visualaization</p>
+      <p>MLOPS</p>
+      </div>
+      </div>
+    </div>
+    
+    <div class="w3-quarter">
+    <div class="w3-card w3-white">
+      <img src="{% static 'microsoft.jpeg'%}" alt="Lights" style="width:100%">
+      <div class="w3-container">
+      <h4 style="color: darkcyan;">MICROSOFT</h4>
+      <h3 style="text-decoration: underline;">WORKS</h3>
+      <p>App Development</p>
+      <p>Content Writing</p>
+      <p>Software Management</p>
+      <p>Database Management</p>
+      </div>
+      </div>
+    </div>
+    
+    <div class="w3-quarter">
+    <div class="w3-card w3-white">
+      <img src="{% static 'meta.jpeg'%}" alt="Mountains" style="width:100%">
+      <div class="w3-container">
+      <h4 style="color: darkcyan;">META</h4>
+      <h3 style="text-decoration: underline;">WORKS</h3>
+      <p>Design Website</p>
+      <p>UI/UX</p>
+      <p>Digital Marketing</p>
+      <p>Advertisment</p>
+      <p>AI Engineer</p>
+      <p>Cload Management</p>
+      </div>
+      </div>
+    </div>
+    
+    </div>
+    </section>
+    
+    
+<br><br>
+    
+    <section id="contact">
+        <div class="container mt-3 contactContent">
+            <h1 class="text-center">Contact Me</h1>
+
+            <div class="row mt-4">
+                <div class="col-lg-6">
+                    <div style="overflow:hidden;max-width:100%;width:500px;height:500px;">
+                        <div id="embedded-map-display" style="height:100%; width:100%;max-width:100%;">
+                            <iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=Thanjavur,+Tamil+Nadu,+India&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
+                        </div>
+                        <a class="our-googlemap-code" href="https://www.bootstrapskins.com/themes" id="authorize-maps-data">premium bootstrap themes</a>
+                        <style>#embedded-map-display img{max-width:none!important;background:none!important;font-size: inherit;font-weight:inherit;}</style>
+                </div>
+                    
+                </div>
+
+                <div class="col-lg-6">
+                    
+                    <form>
+                        <input type="text" class="form-control form-control-lg" placeholder="Name">
+                        <input type="email" class="form-control mt-3" placeholder="Email">
+                        <input type="text" class="form-control mt-3" placeholder="Subject">
+                        <div class="mb-3 mt-3">
+                            <textarea class="form-control" rows="5" id="comment" name="text" placeholder="Project Details"></textarea>
+                        </div>
+                    </form>
+                    <button type="button" class="btn btn-success mt-3">Contact Me</button>
+                    
+                </div>
+
+            </div>
+        </div>
+    </section>
+    
+    <footer id="footer">
+      
+            <div class="social-icons mt-4">
+                <a href="https://www.facebook.com/sarguru.sarguru.526" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/_.gurutamil03._/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://twitter.com/Gurutamil03" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/sarguru-r-0a3a61216/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{% static 'script.js'%}"></script>
+
+</body>
+</html>

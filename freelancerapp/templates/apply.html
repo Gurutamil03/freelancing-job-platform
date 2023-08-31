@@ -1,0 +1,268 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=">
+    <title>Hired Gun-Post A Job</title>
+    <link rel="stylesheet" href="{% static 'home.css'%}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/31149d48b0.js" crossorigin="anonymous"></script>
+
+  <style>
+    :root {
+  --box-height: 40px;
+  --border-radius: 5px;
+  --space-between: 20px;
+  --font-size: 16px;
+
+  --color-0: #ffffff;
+  --color-1: #dcdcdd;
+  --color-2: #c5c3c6;
+  --color-3: #212529;
+  --color-4: #659b5e;
+  --color-5: #ce4257;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0 10px;
+  background-image: url("https://i.postimg.cc/BnhHF28S/nastuh-abootalebi-y-Wwob8kw-OCk-unsplash-modified.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+}
+
+#survey-container {
+  margin: 20px auto;
+  padding: 30px 20px;
+  width: 100%;
+  max-width: 840px;
+  border-radius: calc(3 * var(--border-radius));
+}
+
+#title {
+  margin: 30px 0;
+  text-align: center;
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 50px;
+  text-transform: capitalize;
+  color: var(--color-3);
+}
+
+#description {
+  margin: 30px 0;
+  padding: 5px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--color-3);
+}
+
+#survey-form {
+  padding: 30px;
+  padding-top: 20px;
+  background-color: #ce4257;
+  opacity: 98%;
+  border: none;
+  border-radius: calc(2 * var(--border-radius));
+}
+
+#survey-form * {
+  font-size: var(--font-size);
+}
+
+.row-label,
+.row-input {
+  padding: 5px 10px;
+  margin: 0;
+  height: var(--box-height);
+  width: 100%;
+  display: block;
+}
+
+.row-label {
+  color: var(--color-3);
+  font-weight: 600;
+}
+
+.row-label:not(:first-child) {
+  margin-top: var(--space-between);
+}
+
+.row-input:not(.small) {
+  background: white;
+  border: none;
+  border-radius: var(--border-radius);
+}
+
+.inline-label {
+  margin-left: 10px;
+  font-size: 14px;
+  color: var(--color-3);
+}
+
+.small {
+  height: calc(var(--box-height) * 0.75);
+}
+
+#comments {
+  padding: 10px;
+  margin: 0;
+  height: 120px;
+  width: 100%;
+  background: white;
+  border: none;
+  border-radius: var(--border-radius);
+  resize: none;
+}
+
+#submit {
+  margin-top: calc(2 * var(--space-between));
+  height: var(--box-height);
+  width: 100%;
+  background: var(--color-4);
+  border: none;
+  border-radius: var(--border-radius);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+#submit:hover {
+  box-shadow: 0 0 2px var(--color-3);
+}
+
+</style>
+</head>
+
+<body >
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@700&family=Montserrat&display=swap" rel="stylesheet">
+
+<div id="survey-container">
+
+  <h1 id="title"> Hired Gun-APPLY For Job</h1>
+
+  <p id="description">Fill in to apply</p>
+
+  <form id="survey-form" method="POST">
+    {% csrf_token %}
+    <!-- name -->
+    <label id="name-label" class="row-label" for="name">Name:</label>
+    <input id="name" class="row-input" type="text" placeholder="Enter your name" required>
+
+    <!-- email -->
+    <label id="email-label" class="row-label" for="email">Email:</label>
+    <input id="email" class="row-input" type="email" placeholder="Enter your email" required>
+
+    <!-- education dropdown -->
+    <label class="row-label" for="dropdown">Level of education:</label>
+    <select id="dropdown" class="row-input" required>
+      <option disabled selected>Select an option</option>
+      <option value="primary">Primary education</option>
+      <option value="secondary">Secondary education</option>
+      <option value="igher">Higher education</option>
+      <option value="na">No answer</option>
+    </select>
+
+    <!-- years of experience -->
+    <label id="number-label" class="row-label" for="number">Years of experience (optional):</label>
+    <input id="number" class="row-input" type="number" placeholder="Enter number of years of experience" min="0" max="50">
+
+    <!-- programs checkbox -->
+    <p class="row-label">Known programs:</p>
+    <label class="row-input small" for="box-excel">
+        <input type="checkbox" id="box-excel" name="checkbox" value="excel">
+        <span class="inline-label">Python</span>
+      </label>
+
+    <label class="row-input small" for="box-windows">
+      <input type="checkbox" id="box-windows" name="checkbox" value="windows">
+      <span class="inline-label">JAVA</span>
+    </label>
+
+    <label class="row-input small" for="box-word">
+      <input type="checkbox" id="box-word" name="checkbox" value="word">
+      <span class="inline-label">R Programming</span>
+    </label>
+
+    <label class="row-input small" for="box-excel">
+      <input type="checkbox" id="box-excel" name="checkbox" value="excel">
+      <span class="inline-label">SQL</span>
+    </label>
+
+    <label class="row-input small" for="box-powerpoint">
+      <input type="checkbox" id="box-powerpoint" name="checkbox" value="powerpoint">
+      <span class="inline-label">C</span>
+    </label>
+
+    <label class="row-input small" for="box-outlook">
+      <input type="checkbox" id="box-outlook" name="checkbox" value="outlook">
+      <span class="inline-label">C++</span>
+    </label>
+
+    <label class="row-input small" for="box-outlook">
+        <input type="checkbox" id="box-outlook" name="checkbox" value="outlook">
+        <span class="inline-label">SCALA</span>
+      </label>
+
+    <!-- salary radio -->
+    <p class="row-label">Expected salary:</p>
+
+    <label class="row-input small" for="below-3k">
+      <input type="radio" id="below-3k" name="radio" value="below-3k">
+      <span class="inline-label">Below $3K</span>
+    </label>
+
+    <label class="row-input small" for="3k-4k">
+      <input type="radio" id="3k-4k" name="radio" value="3k-4k">
+      <span class="inline-label">$3K - $4K</span>
+    </label>
+
+    <label class="row-input small" for="4k-5k">
+      <input type="radio" id="4k-5k" name="radio" value="4k-5k">
+      <span class="inline-label">$4K - $5K</span>
+    </label>
+
+    <label class="row-input small" for="above-5k">
+      <input type="radio" id="above-5k" name="radio" value="above-5k">
+      <span class="inline-label">Above $5K</span>
+    </label>
+
+    <label class="row-input small" for="dont-know">
+      <input type="radio" id="dont-know" name="radio" value="dont know">
+      <span class="inline-label">Don't know</span>
+    </label>
+
+    <!-- comments textarea -->
+    <label class="row-label" for="comments">Additional informations:</label>
+    <textarea id="comments" placeholder="Enter other informations here..."></textarea>
+
+    <!-- submit button -->
+    <button id="submit" type="submit"><a href="{% url 'home' %}">APPLY</a></button>
+
+  </form>
+  <footer id="footer">
+      
+    <div class="social-icons mt-4">
+        <a href="https://www.facebook.com/sarguru.sarguru.526" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/_.gurutamil03._/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://twitter.com/Gurutamil03" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.linkedin.com/in/sarguru-r-0a3a61216/" target="_blank"><i class="fab fa-linkedin"></i></a>
+    </div>
+</div>
+</footer>
+
+</div>
+</body>
+</html>

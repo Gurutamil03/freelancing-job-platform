@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <link rel="stylesheet" href="{% static 'style3.css'%}">
+</head>
+<style>
+  /* --------------try---------- */
+  .effect-8~.focus-border:before,
+.effect-8~.focus-border:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 2px;
+	background-color: #3399FF;
+	transition: 0.3s;
+}
+ 
+.effect-8~.focus-border:after {
+	top: auto;
+	bottom: 0;
+	left: auto;
+	right: 0;
+}
+ 
+.effect-8~.focus-border i:before,
+.effect-8~.focus-border i:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 2px;
+	height: 0;
+	background-color: #3399FF;
+	transition: 0.4s;
+}
+ 
+.effect-8~.focus-border i:after {
+	left: auto;
+	right: 0;
+	top: auto;
+	bottom: 0;
+}
+ 
+.effect-8:focus~.focus-border:before,
+.effect-8:focus~.focus-border:after {
+	width: 100%;
+	transition: 0.3s;
+}
+ 
+.effect-8:focus~.focus-border i:before,
+.effect-8:focus~.focus-border i:after {
+	height: 100%;
+	transition: 0.4s;
+}
+</style>
+<body>
+  
+<div class="login-box">
+  <h2>Login-Hired Freelancer</h2>
+  <form>
+    <div class="user-box">
+      <input type="text" name="" required="">
+      <label>Username</label>
+    </div>
+    <div class="user-box">
+      <input type="password" name="" required="">
+      <label>Password</label>
+    </div>
+    <a href="{% url 'home' %}">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Submit
+    </a>
+  </form>
+</div>
+  </body>
+
+</html>
